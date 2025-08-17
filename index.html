@@ -8,8 +8,8 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  color: #111; /* texto escuro sobre fundo claro */
-  background-color: #f5f5f5; /* fundo claro */
+  color: #111;
+  background-color: #f5f5f5;
   perspective: 1000px;
 }
 
@@ -72,112 +72,11 @@ header p {
   color: #333;
 }
 
-/* ===== Bandeiras balançando ===== */
-@keyframes balancar {
+/* ===== Animação mãozinha ===== */
+@keyframes acenar {
   0% { transform: rotate(0deg); }
-  25% { transform: rotate(3deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-3deg); }
-  100% { transform: rotate(0deg); }
-}
-
-.languages {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 20px;
-}
-
-.languages img {
-  width: 60px;
-  border-radius: 6px;
-  animation: balancar 2s infinite ease-in-out;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* ===== Botões animados ===== */
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 25px;
-  color: #fff;
-  background-color: #0077b6;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.btn:hover {
-  background-color: #023e8a;
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-/* ===== Footer ===== */
-footer {
-  padding: 30px;
-  background: rgba(245,245,245,0.95);
-  text-align: center;
-  margin-top: 50px;
-  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
-  color: #111;
-}
-</style>
-</head>
-<body>
-
-<!-- Menu fixo -->
-<nav>
-  <a href="#sobre">Sobre</a>
-  <a href="#idiomas">Idiomas</a>
-  <a href="#contato">Contato</a>
-</nav>
-
-<!-- Header -->
-<header>
-  <h1>👋 Olá, eu sou Esdras Fonseca Gonçalves</h1>
-  <p>Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> (ADS) na UNA Contagem</p>
-  <p>Atualmente aprendendo: <strong>Modelagem de Software</strong></p>
-</header>
-
-<!-- Sobre -->
-<section id="sobre">
-  <h2>Sobre mim</h2>
-  <p>Sou apaixonado por tecnologia e programação. Estou iniciando minha jornada em desenvolvimento web e quero criar projetos incríveis!</p>
-</section>
-
-<!-- Idiomas -->
-<section id="idiomas">
-  <h2>Idiomas que falo</h2>
-  <div class="languages">
-    <div>
-      <img src="https://flagcdn.com/w320/br.png" alt="Português">
-      <p>Português (Nativo)</p>
-    </div>
-    <div>
-      <img src="https://flagcdn.com/w320/es.png" alt="Espanhol">
-      <p>Espanhol (Avançado)</p>
-    </div>
-    <div>
-      <img src="https://flagcdn.com/w320/gb.png" alt="Inglês">
-      <p>Inglês (Intermediário)</p>
-    </div>
-  </div>
-</section>
-
-<!-- Contato / Botões -->
-<section id="contato">
-  <h2>Contato</h2>
-  <a href="https://github.com/seu-usuario" target="_blank" class="btn">GitHub</a>
-  <a href="https://www.linkedin.com/in/esdras-fonseca-7358a0282/" target="_blank" class="btn">LinkedIn</a>
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>© 2025 Esdras Fonseca Gonçalves</p>
-</footer>
-
-</body>
-</html>
+  20% { transform: rotate(20deg); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(20deg); }
+  80% { transform: rotate(-10deg);
 
