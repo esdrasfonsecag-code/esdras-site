@@ -1,91 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esdras Fonseca Gonçalves</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esdras Fonseca Gonçalves</title>
+<style>
+/* ===== Fundo animado ===== */
+@keyframes fundoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    header {
-      padding: 2rem;
-      background: rgba(0,0,0,0.3);
-    }
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+  background-size: 400% 400%;
+  animation: fundoAnimado 15s ease infinite;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
+/* ===== Menu fixo ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  z-index: 100;
+}
 
-    header p {
-      font-size: 1.2rem;
-      margin-top: .5rem;
-    }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    section {
-      padding: 2rem;
-    }
+nav a:hover {
+  color: #ffd700;
+}
 
-    .languages {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
+/* ===== Seções ===== */
+section {
+  padding: 100px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.3);
+  margin-top: 80px;
+  border-radius: 15px;
+}
 
-    .languages img {
-      width: 60px;
-      height: 40px;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
+header {
+  padding: 150px 20px 50px 20px;
+  text-align: center;
+}
 
-    footer {
-      margin-top: 3rem;
-      padding: 1rem;
-      background: rgba(0,0,0,0.3);
-      font-size: 0.9rem;
-    }
-  </style>
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* ===== Bandeiras balançando ===== */
+@keyframes balancar {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.languages {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 20px;
+}
+
+.languages img {
+  width: 60px;
+  border-radius: 6px;
+  animation: balancar 2s infinite ease-in-out;
+}
+
+/* ===== Botões animados ===== */
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffd700;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 30px;
+  background: rgba(0,0,0,0.5);
+  text-align: center;
+  margin-top: 50px;
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>👋 Olá, eu sou Esdras Fonseca Gonçalves</h1>
-    <p>Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> (ADS)</p>
-    <p>Universidade: UNA Contagem</p>
-    <p>📚 Atualmente aprendendo: Modelagem de Software</p>
-  </header>
+<!-- Menu fixo -->
+<nav>
+  <a href="#sobre">Sobre</a>
+  <a href="#idiomas">Idiomas</a>
+  <a href="#contato">Contato</a>
+</nav>
 
-  <section>
-    <h2>Idiomas que falo:</h2>
-    <div class="languages">
-      <div>
-        <img src="https://flagcdn.com/w320/es.png" alt="Espanhol">
-        <p>Espanhol (Avançado)</p>
-      </div>
-      <div>
-        <img src="https://flagcdn.com/w320/gb.png" alt="Inglês">
-        <p>Inglês (Intermediário)</p>
-      </div>
-      <div>
-        <img src="https://flagcdn.com/w320/br.png" alt="Português">
-        <p>Português (Nativo)</p>
-      </div>
+<!-- Header -->
+<header>
+  <h1>👋 Olá, eu sou Esdras Fonseca Gonçalves</h1>
+  <p>Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> (ADS) na UNA Contagem</p>
+  <p>Atualmente aprendendo: <strong>Modelagem de Software</strong></p>
+</header>
+
+<!-- Sobre -->
+<section id="sobre">
+  <h2>Sobre mim</h2>
+  <p>Sou apaixonado por tecnologia e programação. Estou iniciando minha jornada em desenvolvimento web e quero criar projetos incríveis!</p>
+</section>
+
+<!-- Idiomas -->
+<section id="idiomas">
+  <h2>Idiomas que falo</h2>
+  <div class="languages">
+    <div>
+      <img src="https://flagcdn.com/w320/br.png" alt="Português">
+      <p>Português (Nativo)</p>
     </div>
-  </section>
+    <div>
+      <img src="https://flagcdn.com/w320/es.png" alt="Espanhol">
+      <p>Espanhol (Avançado)</p>
+    </div>
+    <div>
+      <img src="https://flagcdn.com/w320/gb.png" alt="Inglês">
+      <p>Inglês (Intermediário)</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 - Desenvolvido por Esdras</p>
-  </footer>
+<!-- Contato / Botões -->
+<section id="contato">
+  <h2>Contato</h2>
+  <a href="https://github.com/seu-usuario" target="_blank" class="btn">GitHub</a>
+  <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" class="btn">LinkedIn</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Esdras Fonseca Gonçalves</p>
+</footer>
 
 </body>
 </html>
-
