@@ -1,24 +1,42 @@
 <section id="idiomas">
   <h2>Idiomas que falo</h2>
   <div class="languages">
-    <div>
+    <div class="flag-container">
       <img src="https://flagcdn.com/w320/br.png" alt="Português">
       <p>Português (Nativo)</p>
     </div>
-    <div>
+    <div class="flag-container">
       <img src="https://flagcdn.com/w320/es.png" alt="Espanhol">
       <p>Espanhol (Avançado)</p>
     </div>
-    <div>
+    <div class="flag-container">
       <img src="https://flagcdn.com/w320/gb.png" alt="Inglês">
       <p>Inglês (Intermediário)</p>
     </div>
   </div>
 </section>
 
+<style>
+.languages {
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  margin-top:20px;
+  perspective: 800px; /* perspectiva 3D */
+}
+
+.flag-container img {
+  width:60px;
+  border-radius:8px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  cursor:pointer;
+  display:block;
+}
+</style>
+
 <script>
 // Bandeiras balançando em 3D
-gsap.to(".languages img", {
+gsap.to(".flag-container img", {
   rotateX: 10,
   rotateY: 10,
   rotateZ: 5,
