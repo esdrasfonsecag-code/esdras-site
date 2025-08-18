@@ -156,34 +156,48 @@ footer {
   color: #111;
 }
 
-/* -------------------- Notebooks -------------------- */
-.notebook {
+/* -------------------- Mini Notebooks -------------------- */
+.notebooks-left, .notebooks-right {
   position: fixed;
-  width: 200px;
-  height: 150px;
-  background: #111;
-  border-radius: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
 }
-#notebook-left { left: 20px; }
-#notebook-right { right: 20px; }
+.notebooks-left { left: 0; }
+.notebooks-right { right: 0; }
 
-/* Tela dos notebooks */
+.mini-notebook {
+  width: 100px;
+  height: 70px;
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: flutuar 3s infinite alternate;
+}
 .screen {
   width: 100%;
-  height: 100%;
-  background: #222;
-  position: relative;
+  height: 70%;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
-
-/* Canvas ocupando toda a tela do notebook */
-canvas {
+.screen video {
   width: 100%;
   height: 100%;
-  display: block;
+  object-fit: cover;
+}
+.keyboard {
+  height: 30%;
+  background: #222;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+@keyframes flutuar {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
 }
 </style>
 </head>
@@ -240,11 +254,31 @@ canvas {
 </footer>
 
 <!-- -------------------- Mini Notebooks -------------------- -->
-<div id="notebook-left" class="notebook">
-  <div class="screen"><canvas id="canvas-left"></canvas></div>
+<div class="notebooks-left">
+  <!-- Substitua os src dos vídeos pelos seus arquivos -->
+  <div class="mini-notebook"><div class="screen"><video src="videos/charlie.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/nirvana.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/bobmarley.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/futebol1.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/games1.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/art1.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/futebol2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/games2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/art2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/charlie2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
 </div>
-<div id="notebook-right" class="notebook">
-  <div class="screen"><canvas id="canvas-right"></canvas></div>
+
+<div class="notebooks-right">
+  <div class="mini-notebook"><div class="screen"><video src="videos/nirvana2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/bobmarley2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/futebol3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/games3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/art3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/charlie3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/nirvana3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/futebol4.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/games4.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
+  <div class="mini-notebook"><div class="screen"><video src="videos/art4.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
 </div>
 
 <script>
@@ -263,60 +297,6 @@ window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   document.body.style.backgroundPosition = `center ${scrollY * 0.2}px`;
 });
-
-// -------------------- Notebooks Animados --------------------
-// Canvas left: bola se movendo (simulando futebol)
-const canvasLeft = document.getElementById('canvas-left');
-const ctxLeft = canvasLeft.getContext('2d');
-canvasLeft.width = canvasLeft.offsetWidth;
-canvasLeft.height = canvasLeft.offsetHeight;
-
-let x = 50, y = 50, dx = 2, dy = 2;
-function animateLeft() {
-  ctxLeft.clearRect(0,0,canvasLeft.width,canvasLeft.height);
-  // fundo
-  ctxLeft.fillStyle = '#111';
-  ctxLeft.fillRect(0,0,canvasLeft.width,canvasLeft.height);
-  // bola
-  ctxLeft.fillStyle = '#f00';
-  ctxLeft.beginPath();
-  ctxLeft.arc(x, y, 10, 0, Math.PI*2);
-  ctxLeft.fill();
-
-  x += dx;
-  y += dy;
-  if(x<10||x>canvasLeft.width-10) dx*=-1;
-  if(y<10||y>canvasLeft.height-10) dy*=-1;
-
-  requestAnimationFrame(animateLeft);
-}
-animateLeft();
-
-// Canvas right: linhas animadas simulando música
-const canvasRight = document.getElementById('canvas-right');
-const ctxRight = canvasRight.getContext('2d');
-canvasRight.width = canvasRight.offsetWidth;
-canvasRight.height = canvasRight.offsetHeight;
-
-let bars = [];
-for(let i=0;i<20;i++) bars.push(Math.random()*canvasRight.height);
-
-function animateRight() {
-  ctxRight.clearRect(0,0,canvasRight.width,canvasRight.height);
-  ctxRight.fillStyle = '#111';
-  ctxRight.fillRect(0,0,canvasRight.width,canvasRight.height);
-
-  ctxRight.fillStyle = '#0f0';
-  let barWidth = canvasRight.width / bars.length - 2;
-  bars.forEach((b,i)=>{
-    ctxRight.fillRect(i*(barWidth+2),canvasRight.height-b,barWidth,b);
-    bars[i] += (Math.random()-0.5)*10;
-    if(bars[i]<10) bars[i]=10;
-    if(bars[i]>canvasRight.height) bars[i]=canvasRight.height;
-  });
-  requestAnimationFrame(animateRight);
-}
-animateRight();
 </script>
 </body>
 </html>
