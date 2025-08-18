@@ -16,7 +16,17 @@ body {
   color: #111;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background: linear-gradient(135deg, #a0e7e5, #ffffff);
+  /* Gradiente animado de fundo */
+  background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+  background-size: 600% 600%;
+  animation: gradientBG 20s ease infinite;
+}
+
+/* Animação do gradiente */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* -------------------- Barra de rolagem estilizada -------------------- */
@@ -24,20 +34,16 @@ body {
     width: 12px;
 }
 ::-webkit-scrollbar-track {
-    background: #e0f7fa;
+    background: rgba(255,255,255,0.2);
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #0077b6, #023e8a);
+    background: rgba(0,0,0,0.4);
     border-radius: 10px;
-    border: 3px solid #e0f7fa;
+    border: 3px solid rgba(255,255,255,0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #023e8a, #0077b6);
-}
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #0077b6 #e0f7fa;
+    background: rgba(0,0,0,0.7);
 }
 
 /* -------------------- Menu -------------------- */
@@ -85,7 +91,8 @@ header h1 {
 }
 header p {
   font-size: 1.2rem;
-  color: #333;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 /* -------------------- Seções -------------------- */
@@ -155,50 +162,6 @@ footer {
   box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
   color: #111;
 }
-
-/* -------------------- Mini Notebooks -------------------- */
-.notebooks-left, .notebooks-right {
-  position: fixed;
-  top: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 10;
-}
-.notebooks-left { left: 0; }
-.notebooks-right { right: 0; }
-
-.mini-notebook {
-  width: 100px;
-  height: 70px;
-  background: #111;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  animation: flutuar 3s infinite alternate;
-}
-.screen {
-  width: 100%;
-  height: 70%;
-  overflow: hidden;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.screen video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.keyboard {
-  height: 30%;
-  background: #222;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-@keyframes flutuar {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-5px); }
-}
 </style>
 </head>
 <body>
@@ -253,34 +216,6 @@ footer {
   <p>© 2025 Esdras Fonseca Gonçalves</p>
 </footer>
 
-<!-- -------------------- Mini Notebooks -------------------- -->
-<div class="notebooks-left">
-  <!-- Substitua os src dos vídeos pelos seus arquivos -->
-  <div class="mini-notebook"><div class="screen"><video src="videos/charlie.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/nirvana.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/bobmarley.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/futebol1.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/games1.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/art1.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/futebol2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/games2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/art2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/charlie2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-</div>
-
-<div class="notebooks-right">
-  <div class="mini-notebook"><div class="screen"><video src="videos/nirvana2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/bobmarley2.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/futebol3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/games3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/art3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/charlie3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/nirvana3.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/futebol4.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/games4.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-  <div class="mini-notebook"><div class="screen"><video src="videos/art4.mp4" autoplay muted loop></video></div><div class="keyboard"></div></div>
-</div>
-
 <script>
 // -------------------- ScrollReveal --------------------
 ScrollReveal().reveal('header h1', { duration: 1000, origin: 'top', distance: '50px', opacity: 0, scale: 0.9 });
@@ -291,12 +226,6 @@ ScrollReveal().reveal('.languages div', { duration: 1000, origin: 'bottom', dist
 ScrollReveal().reveal('#contato h2', { duration: 1000, origin: 'top', distance: '30px', opacity: 0 });
 ScrollReveal().reveal('#contato p, .btn', { duration: 1000, origin: 'bottom', distance: '20px', opacity: 0, interval: 150 });
 ScrollReveal().reveal('footer p', { duration: 1000, origin: 'bottom', distance: '20px', opacity: 0 });
-
-// -------------------- Parallax leve --------------------
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  document.body.style.backgroundPosition = `center ${scrollY * 0.2}px`;
-});
 </script>
 </body>
 </html>
