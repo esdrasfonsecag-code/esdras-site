@@ -1,179 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Esdras Fonseca Gonçalves</title>
-<style>
-/* Reset e base */
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: Arial, sans-serif;
-  background-color: #d3d3d3; /* fundo cinza */
-  color: #111;
-  scroll-behavior: smooth;
-}
-
-/* Navegação fixa */
-nav {
-  position: fixed;
-  top:0;
-  width:100%;
-  background: rgba(255,255,255,0.95);
-  padding:15px;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.15);
-  z-index:100;
-}
-nav a {
-  text-decoration:none;
-  font-weight:bold;
-  color:#111;
-  transition:.3s;
-}
-nav a:hover { color:#0077b6; transform: scale(1.1); }
-
-/* Header */
-header {
-  padding:150px 20px 50px 20px;
-  text-align:center;
-}
-header h1 { font-size:2.8rem; margin-bottom:10px; }
-.hand { display:inline-block; transform-origin:bottom center; animation: acenar 2s infinite; }
-@keyframes acenar {
-  0%,100% { transform: rotate(0deg); }
-  10%,30%,50% { transform: rotate(15deg); }
-  20%,40%,60% { transform: rotate(-10deg); }
-}
-header p { font-size:1.2rem; margin:5px 0; }
-
-/* Seções */
-section {
-  padding:80px 20px;
-  max-width:900px;
-  margin:40px auto;
-  background: rgba(255,255,255,0.9); /* branco suave */
-  border-radius:20px;
-  box-shadow:0 10px 35px rgba(0,0,0,0.1);
-  text-align:center;
-  opacity:0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
-
-/* Bandeiras (sem animação) */
-.languages {
-  display:flex;
-  justify-content:center;
-  gap:2rem;
-  margin-top:20px;
-}
-.flag-container {
-  text-align:center;
-}
-.languages img {
-  width:60px;
-  border-radius:8px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.2);
-  display:block;
-}
-
-/* Botões e links com hover effects */
-.btn {
-  display:inline-block;
-  margin:10px;
-  padding:12px 25px;
-  color:#fff;
-  background-color:#0077b6;
-  text-decoration:none;
-  border-radius:10px;
-  transition:0.3s;
-}
-.btn:hover {
-  background-color:#023e8a;
-  transform: scale(1.1) rotate(-2deg);
-}
-
-/* Footer */
-footer {
-  padding:30px;
-  background: rgba(255,255,255,0.95);
-  text-align:center;
-  margin-top:50px;
-}
-
-/* Scroll bar estilizada */
-::-webkit-scrollbar { width:12px; }
-::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius:10px; }
-::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.4); border-radius:10px; border:3px solid rgba(0,0,0,0.1); }
-::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.6); }
-
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="#sobre">Sobre</a>
-  <a href="#idiomas">Idiomas</a>
-  <a href="#contato">Contato</a>
-</nav>
-
-<header>
-  <h1><span class="hand">👋</span> Olá, eu sou Esdras Fonseca Gonçalves</h1>
-  <p>30 anos | Estudante de ADS</p>
-  <p>Atualmente cursando o primeiro período na UNA Contagem e aprendendo Modelagem de Software.</p>
-</header>
-
-<section id="sobre">
-  <h2>Sobre mim</h2>
-  <p>Sou apaixonado por tecnologia, dedicado e sempre buscando aprender novas habilidades em programação e desenvolvimento web.</p>
-  <p>Curso: Análise e Desenvolvimento de Sistemas | Faculdade: UNA Contagem</p>
-</section>
-
-<section id="idiomas">
-  <h2>Idiomas que falo</h2>
-  <div class="languages">
-    <div class="flag-container">
-      <img src="https://flagcdn.com/w320/br.png" alt="Português">
-      <p>Português (Nativo)</p>
-    </div>
-    <div class="flag-container">
-      <img src="https://flagcdn.com/w320/es.png" alt="Espanhol">
-      <p>Espanhol (Avançado)</p>
-    </div>
-    <div class="flag-container">
-      <img src="https://flagcdn.com/w320/gb.png" alt="Inglês">
-      <p>Inglês (Intermediário)</p>
-    </div>
-  </div>
-</section>
-
-<section id="contato">
-  <h2>Contato</h2>
-  <p>📞 Telefone: <a href="tel:+5531982900762">31982900762</a></p>
-  <p>📧 Email: <a href="mailto:esdrasfonsecag@gmail.com">esdrasfonsecag@gmail.com</a></p>
-  <a href="https://www.linkedin.com/in/esdras-fonseca-7358a0282/" target="_blank" class="btn">LinkedIn</a>
-</section>
-
-<footer>
-  <p>© 2025 Esdras Fonseca Gonçalves</p>
-</footer>
-
-<script>
-// Scroll reveal das seções
-const sections = document.querySelectorAll("section");
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY + window.innerHeight;
-  sections.forEach(sec => {
-    if(scrollY > sec.offsetTop + 100){
-      sec.style.opacity = 1;
-      sec.style.transform = 'translateY(0)';
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esdras Fonseca Gonçalves</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
     }
-  });
-});
-</script>
 
-</body>
-</html>
+    body {
+      background-color: #2e2e2e;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #3a3a3a;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
