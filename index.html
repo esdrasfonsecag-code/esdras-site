@@ -1,22 +1,69 @@
-<section id="idiomas">
-  <h2>Idiomas que falo</h2>
-  <div class="languages">
-    <div>
-      <img src="https://flagcdn.com/w320/br.png" alt="Português">
-      <p>Português (Nativo)</p>
-    </div>
-    <div>
-      <img src="https://flagcdn.com/w320/es.png" alt="Espanhol">
-      <p>Espanhol (Avançado)</p>
-    </div>
-    <div>
-      <img src="https://flagcdn.com/w320/gb.png" alt="Inglês">
-      <p>Inglês (Intermediário)</p>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esdras Fonseca Gonçalves</title>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
 
 <style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #111;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #e0e0e0; /* fundo cinza */
+}
+
+/* Scroll bar estilizada */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius:10px;}
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.4); border-radius:10px; border:3px solid rgba(0,0,0,0.1);}
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.6); }
+
+nav {
+  position: fixed;
+  top:0; width:100%;
+  background: rgba(255,255,255,0.95);
+  padding:15px;
+  display:flex; justify-content:center; gap:30px;
+  z-index:100;
+  box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+nav a { color:#111; text-decoration:none; font-weight:bold; transition:.3s; }
+nav a:hover { color:#0077b6; text-shadow:0 0 5px #0077b6; }
+
+header {
+  padding:150px 20px 50px 20px;
+  text-align:center;
+}
+header h1 { font-size:3rem; margin-bottom:10px; }
+.hand { display:inline-block; transform-origin:bottom center; animation: acenar 2s infinite; }
+@keyframes acenar {
+  0%,100% { transform: rotate(0deg); }
+  10%,30%,50% { transform: rotate(15deg); }
+  20%,40%,60% { transform: rotate(-10deg); }
+}
+header p { font-size:1.2rem; color:#111; }
+
+/* Seções */
+section {
+  padding:100px 20px;
+  max-width:900px;
+  margin:40px auto;
+  background: rgba(255,255,255,0.95);
+  border-radius:20px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.1);
+  text-align:center;
+  opacity:0; /* invisível inicialmente */
+  transform: translateY(50px); /* leve deslocamento */
+}
+
+/* Bandeiras */
 .languages {
   display:flex;
   justify-content:center;
@@ -27,22 +74,4 @@
   width:60px;
   border-radius:8px;
   box-shadow:0 4px 15px rgba(0,0,0,0.2);
-  cursor:pointer;
-  display:block;
-  transform-origin: top center; /* ponto de rotação */
-}
-</style>
-
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
-<script>
-// Bandeiras balançando continuamente
-gsap.to(".languages img", {
-  rotation:10,          // giro leve
-  yoyo:true,            // volta
-  repeat:-1,            // infinito
-  duration:1.5,
-  ease:"sine.inOut",
-  stagger:0.2           // uma começa depois da outra
-});
-</script>
+  cursor
