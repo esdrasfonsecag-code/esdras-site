@@ -10,7 +10,7 @@ body {
   font-family: 'Arial', sans-serif;
   color: #111;
   background: linear-gradient(135deg, #e0f7fa, #ffffff);
-  perspective: 1000px;
+  scroll-behavior: smooth;
 }
 
 /* Menu fixo */
@@ -39,21 +39,23 @@ nav a:hover {
   text-shadow: 0 0 5px #0077b6;
 }
 
-/* Seções */
+/* Seções com fade-in */
 section {
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
   max-width: 900px;
   margin: 40px auto;
   background: rgba(255,255,255,0.9);
   border-radius: 20px;
   box-shadow: 0 10px 35px rgba(0,0,0,0.1);
-  transform-style: preserve-3d;
-  transition: transform 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-section:hover {
-  transform: translateZ(15px);
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 header {
@@ -66,7 +68,7 @@ header h1 {
   color: #111;
 }
 
-/* Mão acenando real */
+/* Mão acenando */
 @keyframes acenarReal {
   0% { transform: rotate(0deg) translateY(0px); }
   10% { transform: rotate(15deg) translateY(-2px); }
@@ -168,14 +170,14 @@ footer {
 <!-- Header -->
 <header>
   <h1><span class="hand">👋</span> Olá, eu sou Esdras Fonseca Gonçalves</h1>
-  <p>Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> (ADS) na UNA Contagem</p>
-  <p>Atualmente aprendendo: <strong>Modelagem de Software</strong></p>
+  <p>30 anos | Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> (ADS)</p>
+  <p>Sou apaixonado por tecnologia. Atualmente cursando o primeiro período na UNA Contagem e aprendendo Modelagem de Software.</p>
 </header>
 
 <!-- Sobre -->
 <section id="sobre">
   <h2>Sobre mim</h2>
-  <p>Sou apaixonado por tecnologia e programação. Estou iniciando minha jornada em desenvolvimento web e quero criar projetos incríveis!</p>
+  <p>Sou dedicado e curioso, sempre buscando aprender novas tecnologias e desenvolver minhas habilidades em programação e desenvolvimento web.</p>
 </section>
 
 <!-- Idiomas -->
@@ -197,7 +199,7 @@ footer {
   </div>
 </section>
 
-<!-- Contato / Botões -->
+<!-- Contato -->
 <section id="contato">
   <h2>Contato</h2>
   <p>📞 Telefone: <a href="tel:+5531982900762">31982900762</a></p>
@@ -210,6 +212,24 @@ footer {
 <footer>
   <p>© 2025 Esdras Fonseca Gonçalves</p>
 </footer>
+
+<script>
+// Fade-in das seções
+const sections = document.querySelectorAll('section');
+
+function revealSections() {
+  const trigger = window.innerHeight * 0.85;
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if(top < trigger){
+      section.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
+</script>
 
 </body>
 </html>
