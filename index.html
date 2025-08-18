@@ -60,4 +60,72 @@ section {
   box-shadow:0 10px 35px rgba(0,0,0,0.1);
   text-align:center;
   opacity:0;
-  transform: translateY(
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+/* Bandeiras */
+.languages {
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  margin-top:20px;
+}
+.flag-container {
+  perspective: 1000px;
+  text-align:center;
+}
+.languages img {
+  width:60px;
+  border-radius:8px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  display:block;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.languages img:hover {
+  transform: rotateY(360deg) rotateX(20deg);
+}
+
+/* Botões e links com hover effects */
+.btn {
+  display:inline-block;
+  margin:10px;
+  padding:12px 25px;
+  color:#fff;
+  background-color:#0077b6;
+  text-decoration:none;
+  border-radius:10px;
+  transition:0.3s;
+}
+.btn:hover {
+  background-color:#023e8a;
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* Footer */
+footer {
+  padding:30px;
+  background: rgba(255,255,255,0.95);
+  text-align:center;
+  margin-top:50px;
+}
+
+/* Scroll bar estilizada */
+::-webkit-scrollbar { width:12px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius:10px; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.4); border-radius:10px; border:3px solid rgba(0,0,0,0.1); }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.6); }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#sobre">Sobre</a>
+  <a href="#idiomas">Idiomas</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<header>
+  <h1><span class="hand">👋</span> Olá, eu
