@@ -5,15 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Esdras Fonseca Gonçalves</title>
 
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
-
 <style>
+/* Reset básico */
+* { margin:0; padding:0; box-sizing:border-box; }
+
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #e0e0e0;
+  background-color: #e0e0e0; /* fundo cinza */
   color: #111;
   scroll-behavior: smooth;
 }
@@ -70,114 +68,4 @@ section {
   margin-top:20px;
 }
 .flag-container {
-  perspective: 1000px;
-  text-align:center;
-}
-.languages img {
-  width:60px;
-  border-radius:8px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.2);
-  display:block;
-  transform-origin: top center;
-}
-
-/* Botões */
-.btn {
-  display:inline-block;
-  margin:10px;
-  padding:12px 25px;
-  color:#fff;
-  background-color:#0077b6;
-  text-decoration:none;
-  border-radius:10px;
-  transition:0.3s;
-}
-.btn:hover {
-  background-color:#023e8a;
-  transform: scale(1.1);
-}
-
-/* Footer */
-footer {
-  padding:30px;
-  background: rgba(255,255,255,0.95);
-  text-align:center;
-  margin-top:50px;
-}
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="#sobre">Sobre</a>
-  <a href="#idiomas">Idiomas</a>
-  <a href="#contato">Contato</a>
-</nav>
-
-<header>
-  <h1><span class="hand">👋</span> Olá, eu sou Esdras Fonseca Gonçalves</h1>
-  <p>30 anos | Estudante de ADS</p>
-  <p>Sou apaixonado por tecnologia. Atualmente cursando o primeiro período na UNA Contagem e aprendendo Modelagem de Software.</p>
-</header>
-
-<section id="sobre">
-  <h2>Sobre mim</h2>
-  <p>Sou dedicado e curioso, sempre buscando aprender novas tecnologias e desenvolver minhas habilidades em programação e desenvolvimento web.</p>
-</section>
-
-<section id="idiomas">
-  <h2>Idiomas que falo</h2>
-  <div class="languages">
-    <div class="flag-container">
-      <img src="https://flagcdn.com/w320/br.png" alt="Português">
-      <p>Português (Nativo)</p>
-    </div>
-    <div class="flag-container">
-      <img src="https://flagcdn.com/w320/es.png" alt="Espanhol">
-      <p>Espanhol (Avançado)</p>
-    </div>
-    <div class="flag-container">
-      <img src="https://flagcdn.com/w320/gb.png" alt="Inglês">
-      <p>Inglês (Intermediário)</p>
-    </div>
-  </div>
-</section>
-
-<section id="contato">
-  <h2>Contato</h2>
-  <p>📞 Telefone: <a href="tel:+5531982900762">31982900762</a></p>
-  <p>📧 Email: <a href="mailto:esdrasfonsecag@gmail.com">esdrasfonsecag@gmail.com</a></p>
-  <a href="https://github.com/seu-usuario" target="_blank" class="btn">GitHub</a>
-  <a href="https://www.linkedin.com/in/esdras-fonseca-7358a0282/" target="_blank" class="btn">LinkedIn</a>
-</section>
-
-<footer>
-  <p>© 2025 Esdras Fonseca Gonçalves</p>
-</footer>
-
-<script>
-// Bandeiras balançando
-const flags = document.querySelectorAll(".languages img");
-flags.forEach((flag, i) => {
-  let angle = 0;
-  setInterval(() => {
-    angle += 0.5;
-    flag.style.transform = `rotateY(${15*Math.sin(angle*Math.PI/180)}deg) rotateX(${5*Math.sin(angle*Math.PI/180)}deg)`;
-  }, 20);
-});
-
-// Scroll reveal
-const sections = document.querySelectorAll("section");
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY + window.innerHeight;
-  sections.forEach(sec => {
-    if(scrollY > sec.offsetTop + 100) {
-      sec.style.opacity = 1;
-      sec.style.transform = 'translateY(0)';
-    }
-  });
-});
-</script>
-
-</body>
-</html>
+  perspective:
