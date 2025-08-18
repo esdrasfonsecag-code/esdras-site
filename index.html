@@ -1,15 +1,15 @@
 <section id="idiomas">
   <h2>Idiomas que falo</h2>
   <div class="languages">
-    <div class="flag-container">
+    <div>
       <img src="https://flagcdn.com/w320/br.png" alt="Português">
       <p>Português (Nativo)</p>
     </div>
-    <div class="flag-container">
+    <div>
       <img src="https://flagcdn.com/w320/es.png" alt="Espanhol">
       <p>Espanhol (Avançado)</p>
     </div>
-    <div class="flag-container">
+    <div>
       <img src="https://flagcdn.com/w320/gb.png" alt="Inglês">
       <p>Inglês (Intermediário)</p>
     </div>
@@ -22,28 +22,27 @@
   justify-content:center;
   gap:2rem;
   margin-top:20px;
-  perspective: 800px; /* perspectiva 3D */
 }
 
-.flag-container img {
+.languages img {
   width:60px;
   border-radius:8px;
   box-shadow:0 4px 15px rgba(0,0,0,0.2);
   cursor:pointer;
   display:block;
+  transform-origin: top center; /* para balançar como bandeira */
 }
 </style>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
 <script>
-// Bandeiras balançando em 3D
-gsap.to(".flag-container img", {
-  rotateX: 10,
-  rotateY: 10,
-  rotateZ: 5,
-  yoyo:true,
-  repeat:-1,
-  duration:2.5,
-  ease:"power1.inOut",
-  stagger:0.2
+// Balanço suave das bandeiras
+gsap.to(".languages img", {
+  rotation:10,          // gira levemente
+  yoyo:true,            // volta
+  repeat:-1,            // infinito
+  duration:1.5,
+  ease:"sine.inOut",
+  stagger:0.2           // um começa depois do outro
 });
 </script>
