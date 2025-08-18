@@ -29,10 +29,20 @@
   box-shadow:0 4px 15px rgba(0,0,0,0.2);
   cursor:pointer;
   display:block;
-  transform-origin: top center;
-  transition: transform 0.3s ease;
-}
-.languages img:hover {
-  transform: rotate(10deg); /* gira levemente ao passar o mouse */
+  transform-origin: top center; /* ponto de rotação */
 }
 </style>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
+<script>
+// Bandeiras balançando continuamente
+gsap.to(".languages img", {
+  rotation:10,          // giro leve
+  yoyo:true,            // volta
+  repeat:-1,            // infinito
+  duration:1.5,
+  ease:"sine.inOut",
+  stagger:0.2           // uma começa depois da outra
+});
+</script>
